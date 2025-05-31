@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+
+  <!-- Navigation Bar -->
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="karakter.html">Character</a></li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    margin: 0 15px;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #ffcc00;
+  }
+
+  @media (max-width: 600px) {
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-links li {
+      margin: 10px 0;
+    }
+  }
+</style>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .profile-pic {
+      max-width: 150px;
+      border-radius: 50%;
+      float: right;
+      margin-left: 20px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Kathleen Novella Halim</h1>
+    <img src="ME.jpg" alt="Profile Picture" class="profile-pic" />
+    <p><strong>Born:</strong> November 15, 2010</p>
+    <p><strong>Profession:</strong> Student, SMP Santa Laurensia</p>
+
+    <h2>Get to know me</h2>
+    <p>Hi, I am Kathleen from SMP Santa Laurensia. I am 14 years old and I live with family: dad, mom, and little brother.
+        I love to play volleyball with my friends as it always made my day. I also love playing the piano and making art, especially for my parents.
+        It helps me to focus better and allowed me to be creative. 
+    </p>
+
+    <!-- Image in between sections -->
+  <center>
+  <div class="carousel">
+  <img src="voli.jpg" class="carousel-image" alt="Image 1">
+  <img src="yes.jpg" class="carousel-image" alt="Image 2">
+  <img src="community service 2.jpg" class="carousel-image" alt="Image 3">
+
+  <button class="carousel-btn prev" onclick="changeSlide(-1)"></button>
+  <button class="carousel-btn next" onclick="changeSlide(1)"></button>
+</div>
+</center>
+
+<style>
+  .carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 40%;
+    display: none;
+    border-radius: 8px;
+  }
+
+  .carousel-image.active {
+    display: block;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: rgb(255, 255, 255)
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .carousel-btn.prev { left: 250px; }
+  .carousel-btn.next { right: 250px; }
+</style>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-image');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Initialize carousel
+  showSlide(currentSlide);
+</script>
+
+    <h2>School</h2>
+    <p>In school, I learn many new things everyday. It is always interesting to listen to the teacher talking about the coordination system or even statistics.
+        Although it may seem confusing at first, it will be easier if you keep on practing. If you're wondering, here are some of the lessons I learn in school:</p>
+        <ul style="color: #555;">
+            <li>Math - Statistics</li>
+            <li>Biology - Coordination system</li>
+            <li>ICT - Coding</li>
+            <li>PE - Badminton</li>
+            <li>Physics - Lenses</li>
+        </ul>    
+
+    <div class="clear"></div>
+  </div>
+</body>
+</html>
